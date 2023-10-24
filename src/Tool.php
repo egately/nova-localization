@@ -1,8 +1,9 @@
 <?php
 
-namespace :namespace_vendor\:namespace_tool_name;
+namespace Egately\Novalocalization;
 
-use Laravel\Nova\Nova;
+use Illuminate\Http\Request;
+use Laravel\Nova\Menu\MenuSection;
 use Laravel\Nova\Tool as BaseTool;
 
 class Tool extends BaseTool
@@ -14,17 +15,20 @@ class Tool extends BaseTool
      */
     public function boot()
     {
-        Nova::script(':package_name', __DIR__.'/../dist/js/tool.js');
-        Nova::style(':package_name', __DIR__.'/../dist/css/tool.css');
+        Nova::script('Novalocalization', __DIR__.'/../dist/js/tool.js');
+        Nova::style('Novalocalization', __DIR__.'/../dist/css/tool.css');
     }
 
     /**
-     * Build the view that renders the navigation links for the tool.
+     * Build the menu that renders the navigation links for the tool.
      *
-     * @return \Illuminate\View\View
+     * @param  \Illuminate\Http\Request $request
+     * @return mixed
      */
-    public function renderNavigation()
+    public function menu(Request $request)
     {
-        return view(':package_name::navigation');
+        return MenuSection::make('New Nova Tool')
+            ->path('/Novalocalization')
+            ->icon('server');
     }
 }

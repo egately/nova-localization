@@ -1,14 +1,18 @@
 {
     "name": "egately/Novalocalization",
-    "description": "Novalocalization",
+    "description": "Advanced Localization for Nova",
     "keywords": [
         "laravel",
         "nova"
     ],
     "repositories": [
         {
-            "type": "path",
-            "url": "../laravel-nova"
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/Elshaden/nova-inline-text-field.git"
         }
     ],
     "homepage": "https://github.com/egately/Novalocalization",
@@ -21,26 +25,29 @@
         }
     ],
     "require": {
-        "php": "^7.3 || ^8.0 || ^8.1",
-        "laravel/nova": "*"
+        "php": ">=8.0",
+        "laravel/nova": "^4.0",
+        "ext-readline": "*",
+        "outl1ne/nova-inline-text-field": "dev-salah"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.24|^7.0"
+        "orchestra/testbench": "^3.6",
+        "phpunit/phpunit": "^10.1"
     },
     "autoload": {
         "psr-4": {
-            "Egately\\Novalocalization\\": "src/"
+            "Egately\\NovaLocalization\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Egately\\Novalocalization\\Tests\\": "tests"
+            "Egately\\NovaLocalization\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Egately\\Novalocalization\\ToolServiceProvider"
+                "Egately\\NovaLocalization\\ToolServiceProvider"
             ]
         }
     },

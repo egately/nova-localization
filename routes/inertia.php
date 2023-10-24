@@ -5,13 +5,15 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Tool API Routes
+| Tool Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you may register API routes for your tool. These routes
+| Here is where you may register Inertia routes for your tool. These routes
 | are loaded by the ServiceProvider of your tool. They are protected
 | by your tool's "Authorize" middleware by default. Now, go build!
 |
 */
 
-Route::get('endpoint', \Egately\Novalocalization\Http\Controllers\ToolController::class . '@index');
+Route::get('/', function (Request $request) {
+    return inertia('Novalocalization');
+});

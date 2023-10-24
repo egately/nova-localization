@@ -1,9 +1,3 @@
-Nova.booting((Vue, router) => {
-    router.addRoutes([
-        {
-            name: ':package_name',
-            path: '/:package_name',
-            component: require('./components/Tool').default,
-        },
-    ])
+Nova.booting((Vue) => {
+    Nova.inertia('Novalocalization', require('./pages/Tool').default)
 })

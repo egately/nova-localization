@@ -1,10 +1,10 @@
 <?php
 
-namespace :namespace_vendor\:namespace_tool_name\Http\Middleware;
+namespace Egately\Novalocalization\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use :namespace_vendor\:namespace_tool_name\Tool;
+use Egately\Novalocalization\Tool;
 use Symfony\Component\HttpFoundation\Response;
 
 class Authorize
